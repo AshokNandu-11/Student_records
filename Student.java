@@ -10,7 +10,7 @@ public class Student {
         this.marks = marks;
     }
     public void display(){
-        System.out.println("ID: "+id +"| Name: "+name+"| Marks: "+marks);
+        System.out.println("ID: "+id +"  | Name: "+name+"   | Marks: "+marks);
     }
 }
 

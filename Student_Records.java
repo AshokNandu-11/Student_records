@@ -18,7 +18,7 @@ public class Student_Records{
             System.out.println("3. Update Student");
             System.out.println("4. View Student");
             System.out.println("5. Exit...");
-            System.out.println("Enter Your Choice:");
+            System.out.print("Enter Your Choice:");
             choice = sc.nextInt();
 
             switch (choice){
@@ -32,43 +32,44 @@ public class Student_Records{
         }while (choice != 5);
     }
     static void addStudent(){
-            System.out.println("Enter Student Id: ");
-            int id = sc.nextInt();
-            sc.nextLine();
-            System.out.println("Enter Student Name: ");
-            String name = sc.nextLine();
-            System.out.println("Enter Student Marks: ");
-            double marks = sc.nextDouble();
-            students.add(new Student(id,name,marks));
-            System.out.println("Student added Successfully");
+        System.out.print("Enter Student Id: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter Student Marks: ");
+        double marks = sc.nextDouble();
+        students.add(new Student(id,name,marks));
+        System.out.println("Student added Successfully \n");
     }
     static void deleteStudent(){
-        System.out.println("Enter Student Id to Delete: ");
+        System.out.print("Enter Student Id to Delete: ");
         int id = sc.nextInt();
+        System.out.println();
         boolean remove = students.removeIf(s->s.id==id);
         if(remove){
-            System.out.println("Student Deleted Successfully");
+            System.out.print("Student Deleted Successfully \n");
         }else{
-            System.out.println("Invalid ID:"+id+"Please Check Id");
+            System.out.println("Invalid ID:"+id+"Please Check Id \n");
         }
 
     }
     static void updateStudent(){
-        System.out.println("Enter the Student Id want to Update: ");
+        System.out.print("Enter the Student Id want to Update: ");
         int id = sc.nextInt();
         boolean found=false;
         for(Student s: students){
             if(s.id==id){
-                System.out.println("Enter New Name of Student:");
-                s.name = sc.nextLine();
-                System.out.println("Enter New Marks of Student");
+                System.out.print("Enter New Name of Student: ");
+                s.name = sc.next();
+                System.out.print("Enter New Marks of Student: ");
                 s.marks = sc.nextDouble();
                 found = true;
                 break;
             }
         }
         if(!found){
-            System.out.println("Student with "+id+"Not Found");
+            System.out.println("Student with Id "+id+" Not Found");
         }
     }
     static void viewStudent(){
